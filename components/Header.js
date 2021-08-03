@@ -3,7 +3,7 @@ import Icon from "@material-tailwind/react/Icon";
 
 function Header() {
   return (
-    <div
+    <header
       className="sticky top-0 z-50 flex items-center 
     px-4 py-2 shadow-md bg-white"
     >
@@ -45,7 +45,7 @@ function Header() {
         className="cursor-pointer h-12 w-12 rounded-full ml-2"
         src="https://www.dictionary.com/e/wp-content/uploads/2018/08/man-health-worker-emoji-300x300.png"
       />
-    </div>
+    </header>
   );
 }
 
