@@ -3,8 +3,15 @@ import Icon from "@material-tailwind/react/Icon";
 import Head from "next/head";
 import Image from "next/image";
 import Header from "../components/Header";
+import { getSession, useSession } from "next-auth/client";
+import Login from "../components/Login";
 
 export default function Home() {
+  //login logic
+  const [session] = useSession();
+
+  if (!session) return <Login />;
+
   return (
     <div>
       <Head>
