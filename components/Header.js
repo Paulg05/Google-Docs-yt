@@ -1,7 +1,10 @@
 import Button from "@material-tailwind/react/Button";
 import Icon from "@material-tailwind/react/Icon";
+import { signOut, useSession } from "next-auth/client";
 
 function Header() {
+  const session = useSession();
+
   return (
     <header
       className="sticky top-0 z-50 flex items-center 
@@ -41,12 +44,15 @@ function Header() {
         <Icon name="apps" size="3xl" color="gray" />
       </Button>
       <img
+        onClick={signOut}
         loading="lazy"
         className="cursor-pointer h-12 w-12 rounded-full ml-2"
-        src="https://www.dictionary.com/e/wp-content/uploads/2018/08/man-health-worker-emoji-300x300.png"
+        src={session?.user?.image}
       />
     </header>
   );
 }
 
 export default Header;
+
+// "https://www.dictionary.com/e/wp-content/uploads/2018/08/man-health-worker-emoji-300x300.png"
