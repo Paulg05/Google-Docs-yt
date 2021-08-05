@@ -119,7 +119,7 @@ export default function Home() {
             <DocumentRow
               key={doc.id}
               id={doc.id}
-              fil eName={doc.data().fileName}
+              fileName={doc.data().fileName}
               date={doc.data().timestamp}
             />
           ))}
